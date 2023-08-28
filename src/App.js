@@ -94,9 +94,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleThemeSwitch={handleThemeSwitch} />
-      <div className="flex items-center justify-center h-screen pb-24 dark:bg-[#1a1a1b]">
-        <div className="card-container p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-black dark:border-none ">
+      <Header handleThemeSwitch={handleThemeSwitch} theme={theme} />
+      <div className="flex items-center justify-center h-screen pb-24 dark:bg-[#1a1a1b] ">
+        <div className="card-container p-6 bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-black dark:border-none ">
           {stockData.quote ? (
             <div className="flex justify-between">
               <SearchBar

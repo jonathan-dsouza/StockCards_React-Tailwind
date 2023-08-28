@@ -12,7 +12,7 @@ export const BasicInfo = ({ stockData }) => {
               </h1>
             </div>
             <div>
-              <h1 className="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              <h1 className=" text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 {stockData.quote.companyName}
               </h1>
             </div>
@@ -25,7 +25,7 @@ export const BasicInfo = ({ stockData }) => {
             </div>
             <div>
               <h1
-                className={`mb-2 text-xl font-semibold tracking-tight ${
+                className={`text-xl font-semibold tracking-tight ${
                   stockData.quote.changePercent >= 0
                     ? "text-green-500 dark:text-green-500 text-right" // Apply green color for positive values
                     : "text-red-500 dark:text-red-500 text-right" // Apply red color for negative values

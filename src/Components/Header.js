@@ -1,6 +1,8 @@
 import React from "react";
+import moon from "../Assets/dark_mode_black_24dp.svg";
+import sun from "../Assets/light_mode_white_24dp.svg";
 
-export const Header = ({ handleThemeSwitch }) => {
+export const Header = ({ handleThemeSwitch, theme }) => {
   const handleReload = (event) => {
     event.preventDefault();
     window.location.reload();
@@ -16,18 +18,13 @@ export const Header = ({ handleThemeSwitch }) => {
             </span>
           </a>
           <div className="flex items-center lg:order-2">
-            <span className="self-center text-md font-normal whitespace-nowrap px-3 dark:text-white">
-              Switch Theme :
-            </span>
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                value=""
-                className="sr-only peer"
-                onClick={handleThemeSwitch}
-              />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none  rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-            </label>
+            <button className={`ml-6`} onClick={handleThemeSwitch}>
+              {theme === "dark" ? (
+                <img src={sun} alt="light_mode" />
+              ) : (
+                <img src={moon} alt="dark_mode" />
+              )}
+            </button>
           </div>
         </div>
       </nav>
