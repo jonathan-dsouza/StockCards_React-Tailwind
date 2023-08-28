@@ -7,7 +7,7 @@ export const BasicInfo = ({ stockData }) => {
         <div className="flex justify-between my-8">
           <div className="mr-10 max-w-[60%]">
             <div>
-              <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h1 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {stockData.quote.symbol}
               </h1>
             </div>
@@ -34,12 +34,14 @@ export const BasicInfo = ({ stockData }) => {
                 {stockData.quote.changePercent >= 0 ? (
                   <span>
                     <span className="mr-1">&#9650;</span>
-                    {stockData.quote.change.toFixed(2)}
+                    {stockData.quote.change.toFixed(2)} (
+                    {(stockData.quote.changePercent * 100).toFixed(2)}%)
                   </span>
                 ) : (
                   <span>
                     <span className="mr-1">&#9660;</span>
-                    {Math.abs(stockData.quote.change.toFixed(2))}
+                    {Math.abs(stockData.quote.change.toFixed(2))} (
+                    {(stockData.quote.changePercent * 100).toFixed(2)}%)
                   </span>
                 )}
               </h1>
