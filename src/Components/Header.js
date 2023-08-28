@@ -1,11 +1,16 @@
 import React from "react";
 
 export const Header = ({ handleThemeSwitch }) => {
+  const handleReload = (event) => {
+    event.preventDefault();
+    window.location.reload();
+  };
+
   return (
     <header>
       <nav className="bg-white shadow-lg px-4 py-5 lg:px-6 dark:bg-black">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <a href="https://flowbite.com" className="flex items-center">
+          <a href="#" className="flex items-center" onClick={handleReload}>
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
               📈 Stock Widget
             </span>

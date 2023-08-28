@@ -20,27 +20,26 @@ export const BasicInfo = ({ stockData }) => {
           <div>
             <div>
               <h1 className="mb-2 text-xl font-semibold text-right tracking-tight text-gray-900 dark:text-white">
-                $ {stockData.quote.close}
+                $ {stockData.chart[stockData.chart.length - 1].close}
               </h1>
             </div>
             <div>
               <h1
                 className={`mb-2 text-xl font-semibold tracking-tight ${
                   stockData.quote.changePercent >= 0
-                    ? "text-green-500 dark:text-green-500" // Apply green color for positive values
-                    : "text-red-500 dark:text-red-500" // Apply red color for negative values
+                    ? "text-green-500 dark:text-green-500 text-right" // Apply green color for positive values
+                    : "text-red-500 dark:text-red-500 text-right" // Apply red color for negative values
                 } `}
               >
                 {stockData.quote.changePercent >= 0 ? (
                   <span>
                     <span className="mr-1">&#9650;</span>
-                    {(stockData.quote.changePercent * 100).toFixed(2)}%
+                    {stockData.quote.change.toFixed(2)}
                   </span>
                 ) : (
                   <span>
                     <span className="mr-1">&#9660;</span>
-                    {Math.abs((stockData.quote.changePercent * 100).toFixed(2))}
-                    %
+                    {Math.abs(stockData.quote.change.toFixed(2))}
                   </span>
                 )}
               </h1>

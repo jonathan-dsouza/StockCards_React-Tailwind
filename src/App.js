@@ -4,6 +4,7 @@ import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
 import { SearchBar } from "./Components/SearchBar";
 import { BasicInfo } from "./Components/BasicInfo";
+import { Error } from "./Components/Error";
 
 function App() {
   const [stockData, setStockData] = useState({});
@@ -26,12 +27,14 @@ function App() {
         .then((response) => {
           setStockData(response.data);
           console.log(response.data);
+          setError(false);
           setCompanySymbol("");
         })
         .catch((error) => {
           console.log(error);
           setStockData({});
           setError(true);
+          setCompanySymbol("");
         });
     }
   };
@@ -65,12 +68,13 @@ function App() {
     <div className="App">
       <Header handleThemeSwitch={handleThemeSwitch} />
       <div className="flex items-center justify-center h-screen pb-24 dark:bg-[#1a1a1b]">
-        <div class="w-96 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-black dark:border-none">
+        <div className="w-96 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-black dark:border-none">
           <SearchBar
             companyName={companySymbol}
             handleSearch={handleSearch}
             searchCompany={searchCompany}
           />
+          {error && <Error />}
           <BasicInfo stockData={stockData} />
         </div>
       </div>
