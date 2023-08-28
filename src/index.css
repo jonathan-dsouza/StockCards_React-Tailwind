@@ -19,3 +19,27 @@ code {
 html {
   overflow: hidden;
 }
+
+.card-container {
+  width: 300px; /* Set the minimum width */
+  max-width: 96%; /* Set the maximum width to prevent overflowing on small screens */
+}
+
+@media (min-width: 640px) {
+  .card-container {
+    width: 400px; /* Adjust the width for larger screens */
+  }
+}
+
+@keyframes rotateOnce {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-once {
+  animation: rotateOnce 1s ease-in-out forwards; /* Adjust animation duration */
+}

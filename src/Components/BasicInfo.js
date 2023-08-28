@@ -20,7 +20,7 @@ export const BasicInfo = ({ stockData }) => {
           <div>
             <div>
               <h1 className="mb-2 text-xl font-semibold text-right tracking-tight text-gray-900 dark:text-white">
-                $ {stockData.chart[stockData.chart.length - 1].close}
+                $ {stockData.quote.iexRealtimePrice.toFixed(2)}
               </h1>
             </div>
             <div>
