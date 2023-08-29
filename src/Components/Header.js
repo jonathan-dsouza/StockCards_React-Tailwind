@@ -17,8 +17,8 @@ export const Header = ({ handleThemeSwitch, theme }) => {
               📈 Stock Widget
             </span>
           </a>
-          <div className="flex items-center lg:order-2">
-            <button className={`ml-6`} onClick={handleThemeSwitch}>
+          <div className="flex items-center lg:order-2 border-2 rounded-lg border-gray-300 dark:border-gray-700">
+            <button className={`p-[3px]`} onClick={handleThemeSwitch}>
               {theme === "dark" ? (
                 <img src={sun} alt="light_mode" />
               ) : (

@@ -1,5 +1,5 @@
 import React from "react";
-import errorImage from "../Assets/warning.png";
+import errorImage from "../Assets/code-red.svg";
 
 export const Error = () => {
   return (
