@@ -12,7 +12,7 @@ function App() {
   const [companySymbol, setCompanySymbol] = useState("");
   const [symbolRef, setSymbolRef] = useState("");
   const [error, setError] = useState(false);
-  const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState("light");
   const [isRotating, setIsRotating] = useState(false);
 
   // const finnhub_url = `https://finnhub.io/api/v1/search?q=appleinc&token=${process.env.REACT_APP_FINNHUB_KEY}`;
@@ -72,13 +72,13 @@ function App() {
   };
 
   //For Dark theme switcher
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  //     setTheme("dark");
+  //   } else {
+  //     setTheme("light");
+  //   }
+  // }, []);
 
   useEffect(() => {
     if (theme === "dark") {
