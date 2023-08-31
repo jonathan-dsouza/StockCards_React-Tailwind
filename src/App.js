@@ -26,21 +26,26 @@ function App() {
 
   const searchCompany = (event) => {
     if (event.key === "Enter") {
-      axios
-        .get(iex_url)
-        .then((response) => {
-          setStockData(response.data);
-          console.log(response.data);
-          setError(false);
-          setCompanySymbol("");
-        })
-        .catch((error) => {
-          console.log(error);
-          setStockData({});
-          setError(true);
-          setCompanySymbol("");
-        });
+      fetchData();
     }
+  };
+
+  const fetchData = () => {
+    axios.get(iex_url).then(handleStockData).catch(handleFetchError);
+  };
+
+  const handleStockData = (response) => {
+    setStockData(response.data);
+    console.log(response.data);
+    setError(false);
+    setCompanySymbol("");
+  };
+
+  const handleFetchError = (error) => {
+    console.log(error);
+    setStockData({});
+    setError(true);
+    setCompanySymbol("");
   };
 
   const handleSearch = (event) => {
